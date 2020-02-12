@@ -7,7 +7,7 @@ package pruebateatro.Entidades.newpackage;
 
 /**
  *
- * @author cliwfshowardfigueroavaleriano
+ * @author 20162
  */
 public class Expositor extends Personateatro {
     

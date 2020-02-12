@@ -10,7 +10,7 @@ import pruebateatro.Entidades.newpackage.Expositor;
 
 /**
  *
- * @author cliwfshowardfigueroavaleriano
+ * @author 20162
  */
 public class Eventoteatro {
     private String Titulo;
