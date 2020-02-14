@@ -5,14 +5,20 @@
  */
 package pruebateatro.Entidades.newpackage;
 
+import java.util.Scanner;
+
 /**
  *
  * @author 20162
  */
 public class Asistente extends Personateatro {
+    Scanner sc = new Scanner (System.in);
     String telefonoAsistente;
     String direccionAsistente;
-
+    
+    public Asistente (){
+        
+    }
     public Asistente(String codigoPersona, String nombrePersona, String apellidoPersona, String correoPersona, String telefonoAsistente, String direccionAsistente) {
         super(codigoPersona, nombrePersona, apellidoPersona, correoPersona);
         this.telefonoAsistente=telefonoAsistente;
@@ -68,7 +74,21 @@ public class Asistente extends Personateatro {
     }
 
   
-
+    public  void llenarDatosAsistente (){
+        System.out.println("ingrese el codigo del asistente:");
+        setCodigoPersona(sc.next());
+        System.out.println("ingrese el nombre del asistente: ");
+        setNombrePersona(sc.next());
+        System.out.println("ingrese el apellido paterno del asistente: ");
+        setApellidoPersona(sc.next());
+        System.out.println("ingrese el  correo electronico del asistente: ");
+        setCorreoPersona(sc.next());
+        System.out.println("ingrese el telefono  del  asistente:");
+        setTelefonoAsistente(sc.next());
+        System.out.println("ingrese la direccion del asistente:");
+        setDireccionAsistente(sc.next());
+        
+    }
    
   
     

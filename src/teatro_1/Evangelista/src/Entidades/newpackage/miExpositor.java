@@ -3,17 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pruebateatro.Entidades.newpackage;
+package Entidades.newpackage;
 
 /**
  *
- * @author 20162
+ * @author cliwfshowardfigueroavaleriano
  */
-public class Expositor extends Personateatro {
-    public Expositor(){
-        
-    }
-    public Expositor(String codigoPersona, String nombrePersona, String apellidoPersona, String correoPersona) {
+public class miExpositor extends Persona {
+    
+    public miExpositor(String codigoPersona, String nombrePersona, String apellidoPersona, String correoPersona) {
         super(codigoPersona, nombrePersona, apellidoPersona, correoPersona);
     }
 

@@ -35,7 +35,7 @@ public class Pruebateatro {
          evento.costoPorUbicacion();
          System.out.println("Costo : "+ evento.getCostoEntrada());
          System.out.println("Monto a pagar con IGV : " + evento.generarTotalConIGV());
-          System.out.println("Monto por temporada : " + evento.descuentoPorTemporada());
+          //System.out.println("Monto por temporada : " + evento.descuentoPorTemporada());
     }
 
   

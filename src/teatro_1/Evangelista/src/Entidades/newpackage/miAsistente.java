@@ -3,18 +3,36 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pruebateatro.Entidades.newpackage;
+package Entidades.newpackage;
 
 /**
  *
- * @author 20162
+ * @author cliwfshowardfigueroavaleriano
  */
-public class Expositor extends Personateatro {
-    public Expositor(){
-        
-    }
-    public Expositor(String codigoPersona, String nombrePersona, String apellidoPersona, String correoPersona) {
+public class miAsistente extends Persona {
+    String telefonoAsistente;
+    String direccionAsistente;
+
+    public miAsistente(String codigoPersona, String nombrePersona, String apellidoPersona, String correoPersona, String telefonoAsistente, String direccionAsistente) {
         super(codigoPersona, nombrePersona, apellidoPersona, correoPersona);
+        this.telefonoAsistente=telefonoAsistente;
+        this.direccionAsistente=direccionAsistente;
+    }
+
+    public String getTelefonoAsistente() {
+        return telefonoAsistente;
+    }
+
+    public void setTelefonoAsistente(String telefonoAsistente) {
+        this.telefonoAsistente = telefonoAsistente;
+    }
+
+    public String getDireccionAsistente() {
+        return direccionAsistente;
+    }
+
+    public void setDireccionAsistente(String direccionAsistente) {
+        this.direccionAsistente = direccionAsistente;
     }
 
     public String getCodigoPersona() {
@@ -49,7 +67,9 @@ public class Expositor extends Personateatro {
         this.correoPersona = correoPersona;
     }
 
+  
 
-    
    
+  
+    
 }

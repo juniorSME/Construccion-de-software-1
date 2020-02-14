@@ -3,22 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pruebateatro.Entidades.newpackage;
+package Entidades.newpackage;
 
 /**
  *
- * @author 20162
+ * @author cliwfshowardfigueroavaleriano
  */
-public class Personateatro {
+public class Persona {
     String codigoPersona;
     String nombrePersona;
     String apellidoPersona;
     String correoPersona;
 
-    public Personateatro() {
-    }
-
-    public Personateatro(String codigoPersona, String nombrePersona, String apellidoPersona, String correoPersona) {
+    public Persona(String codigoPersona, String nombrePersona, String apellidoPersona, String correoPersona) {
         this.codigoPersona = codigoPersona;
         this.nombrePersona = nombrePersona;
         this.apellidoPersona = apellidoPersona;

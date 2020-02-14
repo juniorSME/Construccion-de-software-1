@@ -5,8 +5,6 @@
  */
 package pruebateatro.Entidades.newpackage;
 
-import pruebateatro.Entidades.newpackage.Asistente;
-import pruebateatro.Entidades.newpackage.Expositor;
 
 /**
  *
@@ -23,6 +21,9 @@ public class Eventoteatro {
     private Double costoEntrada;
     private char ubicacionEvento;
     private MisConstantes constantes;
+
+    public Eventoteatro() {
+    }
 
     
     public Eventoteatro(String Titulo, int duracionEvento, Expositor Expositor, Asistente Asistente, String horaIngreso, String horaSalida, String temporadaEvento, char ubicacionEvento) {
@@ -121,32 +122,32 @@ public class Eventoteatro {
     public void costoPorUbicacion(){
       
         if(this.ubicacionEvento == 'P'){
-            this.costoEntrada=constantes.Plantinum;
+            this.costoEntrada=this.constantes.Plantinum;
         }
         else if (this.ubicacionEvento == 'G'){
-           this.costoEntrada=constantes.Gold;
+           this.costoEntrada=this.constantes.Gold;
         }
         else{
            this.costoEntrada=constantes.VIP;
         }
 
     }
-    
+    //usar this dentro  de la clase 
     public double generarTotalConIGV(){
-        costoEntrada=costoEntrada+(costoEntrada*constantes.IGV);
-        return costoEntrada;
+        this.costoEntrada= (this.costoEntrada+(this.costoEntrada*this.constantes.IGV));
+        return this.costoEntrada;
     }
 
-    public double descuentoPorTemporada(){
-        Double descuento = 0.0;
-        if(temporadaEvento == "alta" ) {
-        descuento = costoEntrada * 0.05;
-        }
-        
-        if(temporadaEvento == "baja" ) {
-        descuento = costoEntrada * 0.10;
-        }
-        return descuento;
+    public /*double */ void descuentoPorTemporada(){
+//        Double descuento = 0.0;
+//        if(temporadaEvento == "alta" ) {
+//        descuento = costoEntrada * 0.05;
+//        }
+//        
+//        if(temporadaEvento == "baja" ) {
+//        descuento = costoEntrada * 0.10;
+//        }
+//        return descuento;
     }
     
     
