@@ -156,7 +156,7 @@ class ordenador {
         System.out.println("teclado");
         tec.setIngresar(" R Dragon Z9");
         System.out.println(tec.getIngresar());
-
+        
     }
 }
 

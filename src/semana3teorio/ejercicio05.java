@@ -144,24 +144,59 @@ class person implements Iterable<worker> {
                 cad = peo.getNombre();
             }
         }
-//        for (worker peo : people) {
-//            if (peo.montoSueldoNeto() == sueldotemp) {
-//                cad += peo.getNombre() + " ";
-//            }
-//        }
         return cad;
     }
 
     double sueldonetoAreas(String area) {
-        double sumaaux = 0.0 ;
-        for (worker peo: people) {
-            if (peo.getArealaboral()==area) {
-                sumaaux+=peo.montoSueldoNeto();
+        double sumaaux = 0.0;
+        for (worker peo : people) {
+            if (peo.getArealaboral() == area) {
+                sumaaux += peo.montoSueldoNeto();
             }
         }
         return sumaaux;
     }
 
+    int mayor100() {
+        int contador = 0;
+        for (worker peo : people) {
+            if (peo.montoSeguro() >= 100) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+
+    int employesistema(String area) {
+        int cont = 0;
+        for (worker peo : people) {
+            if (peo.montohoraextra() >= 500 && peo.montohoraextra() <= 800) {
+                if (peo.getArealaboral()==area) {
+                    cont++;
+                }
+            }
+        }
+        return cont;
+    }
+
+    String afiliadospn(String area) {
+        double menor = 0;
+        String cade="";
+        for (worker peo:people) {
+            if (peo.montoDescuento()<=0) {
+                cade=peo.getNombre();
+            }
+        }
+        return cade;
+    }
+    double gastoempresa(){
+        double acumulador=0;
+        for(worker peo:people){
+            acumulador+=peo.montoSueldoNeto();
+//            acumulador++;
+        }
+        return acumulador;
+    }
     @Override
     public Iterator<worker> iterator() {
         return people.iterator();
@@ -173,8 +208,8 @@ public class ejercicio05 {
 
     public static void main(String[] args) {
         String laboral[] = {"sistemas", "administracion", "marketing"};
-        String afi[] = {"AFP", "SPN"};
-        worker wor = new worker("1", "jose", laboral[aleatorio(0, 2)], 1200, 5, afi[aleatorio(0, 2)]);
+        String afi[] = {"AFP","SPN"};
+        worker wor = new worker("1", "jose", laboral[aleatorio(0, 2)], 1200, 100, afi[aleatorio(0, 2)]);
         worker wor1 = new worker("2", "lucho", laboral[aleatorio(0, 2)], 2500, 8, afi[aleatorio(0, 2)]);
         worker wor2 = new worker("3", "Juan", laboral[aleatorio(0, 2)], 3500, 4, afi[aleatorio(0, 2)]);
         worker wor4 = new worker("4", "junior ", laboral[aleatorio(0, 2)], 6500, 6, afi[aleatorio(0, 2)]);
@@ -191,8 +226,11 @@ public class ejercicio05 {
         }
         System.out.println("--------------------------------------------------------");
         System.out.println("1:el empleado  que tiene mayor sueldo neto  es: " + per.nameEmpleadoSueldo());
-        System.out.println("2: el sueldo neto de marketing es de: "+ per.sueldonetoAreas("sistemas"));
-        
+        System.out.println("2: el sueldo neto de marketing es de: " + per.sueldonetoAreas("marketing"));
+        System.out.println("3: empleados que superan los 100 soles en el  seguro: " + per.mayor100());
+        System.out.println("4: el numero de empleados cuyo monto  que estan entre los 500 y 800 soles en el area de sistemas son :" + per.employesistema("sistemas"));
+        System.out.println("5: el  empleado SPN con menor monto de descuento es: "+per.afiliadospn("SPN"));
+        System.out.println("6: la empresa debera de pagar a todos sus empleados la suma de: "+per.gastoempresa());
     }
 
     static int aleatorio(int min, int max) {
